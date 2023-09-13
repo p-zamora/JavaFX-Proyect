@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.MenuController">
+    <children>
+        <Button fx:id="btnDashboard" layoutX="25.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Dashboard" />
+        <Button fx:id="btnPaciente" layoutX="25.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Pacientes" />
+        <Button fx:id="btnSepararCita" layoutX="26.0" layoutY="400.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Separar Cita" />
+        <Button fx:id="btnConsultarCita" layoutX="25.0" layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Consultar cita" />
+      <Separator layoutX="295.0" orientation="VERTICAL" prefHeight="800.0" />
+    </children>
+</AnchorPane>

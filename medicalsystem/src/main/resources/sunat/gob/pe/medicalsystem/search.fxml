@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.SearchController">
+   <children>
+       <fx:include source="menu.fxml" />
+       <AnchorPane layoutX="301.0" layoutY="35.0" prefHeight="730.0" prefWidth="899.0">
+           <children>
+               <AnchorPane prefHeight="250.0" prefWidth="899.0">
+                <children>
+                   <Label layoutX="32.0" layoutY="22.0" text="Datos de búsqueda">
+                      <font>
+                         <Font name="System Bold" size="18.0" />
+                      </font>
+                   </Label>
+                   <Label layoutX="32.0" layoutY="73.0" text="N° Doc. de Paciente" />
+                   <Label layoutX="32.0" layoutY="152.0" text="Fecha de cita" />
+                   <Label layoutX="308.0" layoutY="154.0" text="Estado cita" />
+                   <Label layoutX="309.0" layoutY="73.0" text="Médico" />
+                   <TextField layoutX="32.0" layoutY="103.0" prefWidth="250.0" />
+                   <DatePicker layoutX="32.0" layoutY="182.0" prefWidth="250.0" />
+                   <ComboBox layoutX="308.0" layoutY="182.0" prefWidth="250.0" />
+                   <ComboBox layoutX="309.0" layoutY="102.0" prefWidth="250.0" />
+                   <Button layoutX="612.0" layoutY="109.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="230.0" text="Buscar" />
+                </children>
+             </AnchorPane>
+             <AnchorPane layoutY="257.0" prefHeight="473.0" prefWidth="899.0">
+                <children>
+                   <TableView layoutX="25.0" layoutY="52.0" prefHeight="398.0" prefWidth="850.0">
+                     <columns>
+                       <TableColumn prefWidth="75.0" text="C1" />
+                       <TableColumn prefWidth="75.0" text="C2" />
+                     </columns>
+                   </TableView>
+                   <Label layoutX="25.0" layoutY="14.0" text="Resultados">
+                      <font>
+                         <Font name="System Bold" size="18.0" />
+                      </font>
+                   </Label>
+                </children>
+             </AnchorPane>
+             <Separator layoutY="255.0" prefWidth="899.0" />
+           </children>
+       </AnchorPane>
+   </children>
+</AnchorPane>

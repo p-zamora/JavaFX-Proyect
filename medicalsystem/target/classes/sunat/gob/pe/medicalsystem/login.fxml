@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.LoginController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="100.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Downloads/Medical%20prescription-bro.png" />
+               </image></ImageView>
+            <Label layoutX="148.0" layoutY="53.0" prefHeight="35.0" prefWidth="305.0" text="Sistema Medical Enterprise">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="611.0" layoutY="25.0" orientation="VERTICAL" prefHeight="550.0" />
+      <AnchorPane layoutX="617.0" prefHeight="600.0" prefWidth="385.0">
+         <children>
+            <Label layoutX="124.0" layoutY="78.0" text="Bienvenido">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="124.0" text="Ingresa a tu cuenta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="68.0" layoutY="242.0" prefHeight="40.0" prefWidth="250.0" />
+            <Label layoutX="68.0" layoutY="205.0" text="Usuario" />
+            <Label layoutX="68.0" layoutY="303.0" text="Contraseña" />
+            <TextField layoutX="68.0" layoutY="331.0" prefHeight="40.0" prefWidth="250.0" />
+            <Button layoutX="68.0" layoutY="409.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" text="Ingresar" onAction="#btnIngresar"/>
+            <Label layoutX="147.0" layoutY="550.0" prefHeight="21.0" prefWidth="82.0" text="Versión 1.0.0">
+               <font>
+                  <Font name="Consolas" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
