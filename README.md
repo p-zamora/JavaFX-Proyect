@@ -1,4 +1,4 @@
-![image](https://github.com/p-zamora/JavaFX-Proyect/assets/56277246/e3ea0ea5-385b-4881-ae93-8e36ed48c27e)# JavaFX-Proyect
+# JavaFX-Proyect
 Sistema de citas | Curso JavaFX
 
 
