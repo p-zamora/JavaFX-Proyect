@@ -1,0 +1,32 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 14 set. 2023, 23:23:21
+    Author     : ZAMORA
+*/
+
+.window-styles{
+    -fx-background-color: #fff;
+}
+
+.button{
+    -fx-background-color: #245386;
+    -fx-text-fill: white;
+}
+
+.button:hover{
+    -fx-background-color: #4E78A5;
+    -fx-text-fill: white;
+}
+
+.white-form{
+    -fx-background-color: #fff;
+    -fx-padding: 20px !important;
+}
+
+.other-form{
+   -fx-background-color: #245386;
+   -fx-text-fill: white;   
+}

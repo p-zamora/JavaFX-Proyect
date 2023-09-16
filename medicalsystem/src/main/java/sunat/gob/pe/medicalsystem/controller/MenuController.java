@@ -22,7 +22,6 @@ import sunat.gob.pe.medicalsystem.App;
  */
 public class MenuController {
 
-    
     @FXML
     private Button btnDashboard;
     @FXML
@@ -41,16 +40,17 @@ public class MenuController {
         btnPaciente.setOnAction(this::irPaciente);
         btnSepararCita.setOnAction(this::irSepararCita);
         btnConsultarCita.setOnAction(this::irConsultarCita);
-    }   
-    
+    }
+
     @FXML
-    public void irDashboard(ActionEvent event){
+    public void irDashboard(ActionEvent event) {
         try {
+            System.out.println("Ingreso al dashboard");
             FXMLLoader loader = new FXMLLoader(App.class.getResource("dashboard.fxml"));
             Parent dashboard = loader.load();
-            
+
             DashboardController dashboardController = loader.<DashboardController>getController();
-          
+
             App.scene.setRoot(dashboard);
         } catch (IOException e) {
             System.out.println("Error: " + e);
@@ -58,17 +58,19 @@ public class MenuController {
     }
 
     @FXML
-    public void irPaciente(ActionEvent event){
+    public void irPaciente(ActionEvent event) {
         try {
+            System.out.println("Ingreso al paciente");
             App.scene.setRoot(App.loadFXML("paciente"));
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
     }
-    
+
     @FXML
-    public void irSepararCita(ActionEvent event){
+    public void irSepararCita(ActionEvent event) {
         try {
+            System.out.println("Ingreso a la cita");
             App.scene.setRoot(App.loadFXML("cita"));
         } catch (Exception e) {
             System.out.println("Error: " + e);
@@ -76,8 +78,9 @@ public class MenuController {
     }
 
     @FXML
-    public void irConsultarCita(ActionEvent event){
+    public void irConsultarCita(ActionEvent event) {
         try {
+            System.out.println("Ingreso a la consulta");
             App.scene.setRoot(App.loadFXML("search"));
         } catch (Exception e) {
             System.out.println("Error: " + e);

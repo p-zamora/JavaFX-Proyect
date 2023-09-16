@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import sunat.gob.pe.medicalsystem.App;
 
 /**
@@ -24,8 +26,20 @@ public class LoginController {
     @FXML
     public void btnIngresar() {
         try {
+            
+            //id_btningresar.getScene().getWindow().hide();
+            //App.scene.getWindow().hide();
+            
             FXMLLoader loader = new FXMLLoader(App.class.getResource("dashboard.fxml"));
             Parent dashboard = loader.load();
+            //Stage stage = new Stage();
+            //Scene scene = new Scene(dashboard);
+            
+            //stage.setScene(scene);
+            //stage.setResizable(false);
+            //stage.setMaximized(false);
+            //stage.show();
+            
             App.scene.setRoot(dashboard);
         } catch (IOException e) {
             System.out.println("Error: " + e);

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,25 +10,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.DashboardController">
+<StackPane maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" styleClass="window-styles" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.DashboardController">
     <children>
-      <fx:include source="menu.fxml" />
-      <AnchorPane layoutX="301.0" prefHeight="800.0" prefWidth="899.0">
-         <children>
-            <HBox alignment="CENTER_RIGHT" layoutY="14.0" prefHeight="50.0" prefWidth="898.0">
-               <children>
-                  <Label text="Bienvenido, Juan Alberto">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="30.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
-            <AnchorPane layoutY="70.0" prefHeight="730.0" prefWidth="899.0" />
-         </children>
-      </AnchorPane>
+        <BorderPane>
+            <left>
+                <fx:include source="menu.fxml" />
+            </left>
+            <center>
+                <AnchorPane styleClass="window-styles" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                    <children>
+                  <ImageView fitHeight="374.0" fitWidth="529.0" layoutX="366.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/citasMedicas.png" />
+                     </image>
+                  </ImageView>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="898.0" />
+                          <Label layoutX="343.0" layoutY="130.0" text="Bienvenido, Juan Alberto">
+                              <font>
+                                  <Font name="System Bold" size="18.0" />
+                              </font>
+                          </Label>
+                  <TextArea layoutX="56.0" layoutY="277.0" prefHeight="168.0" prefWidth="352.0" style="-fx-background-color: #fff; -fx-border-style: none;" text="Este es un sistema de Citas Médicas, realizado por:&#10;+ Berrospi Ramirez Hector Raul&#10;+ Elguera Chipana Everth&#10;+ Evangelista Carpio Yuri Angel&#10;+ Samanamud Ramirez Sergio &#10;+ Silva Falcon Victor Orlando&#10;+ Zamora León Pablo" />
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
     </children>
-</AnchorPane>
+</StackPane>

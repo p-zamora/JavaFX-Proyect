@@ -21,9 +21,7 @@ public class App extends Application {
             scene = new Scene(loadFXML("login"));
             stage.setScene(scene);
             stage.setResizable(false);
-            //stage.setMaximized(true);
-            //stage.setMaxHeight(800);
-            //stage.setWidth(1200);
+            stage.setMaximized(false);
             stage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());

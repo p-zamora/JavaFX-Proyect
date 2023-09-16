@@ -9,32 +9,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.PacienteController">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" styleClass="window-styles" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunat.gob.pe.medicalsystem.controller.PacienteController">
    <children>
       <fx:include source="menu.fxml" />
-      <AnchorPane layoutX="301.0" layoutY="29.0" prefHeight="730.0" prefWidth="890.0">
+      <AnchorPane layoutX="301.0" layoutY="29.0" prefHeight="730.0" prefWidth="890.0" styleClass="window-styles" stylesheets="@styles.css">
           <children>
               <AnchorPane prefHeight="280.0" prefWidth="899.0">
                 <children>
                    <Pane layoutX="25.0" layoutY="21.0" prefHeight="194.0" prefWidth="850.0">
                       <children>
-                         <ComboBox layoutX="27.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
-                         <Label layoutX="27.0" layoutY="54.0" text="Tipo documento" />
-                         <TextField layoutX="295.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
-                         <Label layoutX="295.0" layoutY="54.0" text="Número de documento" />
-                         <Label layoutX="566.0" layoutY="54.0" text="Nombre" />
-                         <Label layoutX="27.0" layoutY="123.0" text="Apellido Paterno" />
-                         <Label layoutX="295.0" layoutY="123.0" text="Apellido Materno" />
-                         <DatePicker layoutX="566.0" layoutY="144.0" prefWidth="250.0" />
-                         <Label layoutX="566.0" layoutY="123.0" text="Fecha de Nacimiento" />
-                         <TextField layoutX="566.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
+                         <TextField layoutX="27.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
+                         <Label layoutX="27.0" layoutY="54.0" text="Doc. de Identidad" />
+                         <Label layoutX="298.0" layoutY="54.0" text="Nombre" />
+                         <Label layoutX="27.0" layoutY="123.0" text="Apellido Materno" />
+                         <DatePicker layoutX="298.0" layoutY="144.0" prefWidth="250.0" />
+                         <Label layoutX="298.0" layoutY="123.0" text="Fecha de Nacimiento" />
+                         <TextField layoutX="298.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
                          <TextField layoutX="27.0" layoutY="144.0" prefHeight="31.0" prefWidth="250.0" />
-                         <TextField layoutX="295.0" layoutY="144.0" prefHeight="31.0" prefWidth="250.0" />
                          <Label layoutX="27.0" layoutY="7.0" text="Datos del Paciente">
                             <font>
                                <Font name="System Bold" size="18.0" />
                             </font>
                          </Label>
+                        <TextField layoutX="566.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
+                        <Label layoutX="566.0" layoutY="54.0" text="Apellido Paterno" />
                       </children>
                    </Pane>
                    <Button layoutX="429.0" layoutY="227.0" mnemonicParsing="false" prefWidth="120.0" text="Nuevo" />
@@ -42,9 +40,9 @@
                    <Button layoutX="713.0" layoutY="227.0" mnemonicParsing="false" prefWidth="120.0" text="Actualizar" />
                 </children>
              </AnchorPane>
-             <AnchorPane layoutY="280.0" prefHeight="450.0" prefWidth="899.0">
+             <AnchorPane layoutY="280.0" prefHeight="335.0" prefWidth="899.0">
                 <children>
-                   <TableView layoutX="25.0" layoutY="40.0" prefHeight="375.0" prefWidth="850.0">
+                   <TableView layoutX="25.0" layoutY="40.0" prefHeight="300.0" prefWidth="850.0">
                      <columns>
                        <TableColumn prefWidth="75.0" text="C1" />
                        <TableColumn prefWidth="75.0" text="C2" />
@@ -55,7 +53,7 @@
                          <Font name="System Bold" size="15.0" />
                       </font>
                    </Label>
-                   <Separator layoutY="-1.0" prefWidth="899.0" />
+                   <Separator layoutX="25.0" layoutY="-1.0" prefWidth="850" />
                 </children>
              </AnchorPane>
           </children>

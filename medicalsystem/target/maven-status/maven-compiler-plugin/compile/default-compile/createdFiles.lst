@@ -1,5 +1,4 @@
 sunat\gob\pe\medicalsystem\App.class
-sunat\gob\pe\medicalsystem\controller\Menu2Controller.class
 sunat\gob\pe\medicalsystem\controller\MenuController.class
 sunat\gob\pe\medicalsystem\controller\DashboardController.class
 sunat\gob\pe\medicalsystem\controller\SearchController.class
