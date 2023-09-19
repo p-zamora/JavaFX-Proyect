@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.scene.image.Image;
 
 /**
  * JavaFX App
@@ -22,8 +23,9 @@ public class App extends Application {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setMaximized(false);
+            stage.getIcons().add(new Image(getClass().getResource("/sunat/gob/pe/medicalsystem/images/icono.png").toExternalForm()));
             stage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

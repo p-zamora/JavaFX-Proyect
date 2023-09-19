@@ -41,11 +41,11 @@
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <TextField layoutX="75.0" layoutY="235.0" prefHeight="40.0" prefWidth="250.0" />
+                        <TextField fx:id="txtUsuario" layoutX="75.0" layoutY="235.0" prefHeight="40.0" prefWidth="250.0" promptText="&lt; Ingrese Usuario&gt;" />
                         <Label layoutX="75.0" layoutY="198.0" text="Usuario" />
                         <Label layoutX="75.0" layoutY="296.0" text="Contraseña" />
-                        <TextField layoutX="75.0" layoutY="324.0" prefHeight="40.0" prefWidth="250.0" />
-                        <Button fx:id="id_btningresar" layoutX="75.0" layoutY="402.0" mnemonicParsing="false" onAction="#btnIngresar" prefHeight="40.0" prefWidth="250.0" text="Ingresar" />
+                        <PasswordField fx:id="txtPassword" layoutX="75.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="&lt; Ingrese Password&gt;" />
+                        <Button fx:id="btningresar" layoutX="75.0" layoutY="402.0" mnemonicParsing="false" onAction="#btnIngresar" prefHeight="40.0" prefWidth="250.0" text="Ingresar" />
                         <Label layoutX="154.0" layoutY="543.0" prefHeight="21.0" prefWidth="82.0" text="Versión 1.0.0">
                             <font>
                                 <Font name="Consolas" size="11.0" />

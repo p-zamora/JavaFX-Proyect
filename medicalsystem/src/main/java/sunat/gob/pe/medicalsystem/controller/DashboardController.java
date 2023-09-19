@@ -4,9 +4,9 @@
  */
 package sunat.gob.pe.medicalsystem.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import sunat.gob.pe.medicalsystem.model.utils.Utilitario;
 
 /**
  * FXML Controller class
@@ -15,5 +15,10 @@ import javafx.fxml.Initializable;
  */
 public class DashboardController {
 
+    @FXML
+    private Label lbBienvenida;
 
+    public void cambiarUsuario() {
+        this.lbBienvenida.setText("Bienvenido, "+ Utilitario.usuario.getNombre());
+    }
 }

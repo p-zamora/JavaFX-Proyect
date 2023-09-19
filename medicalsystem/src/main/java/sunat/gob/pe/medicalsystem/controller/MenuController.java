@@ -5,12 +5,9 @@
 package sunat.gob.pe.medicalsystem.controller;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import sunat.gob.pe.medicalsystem.App;
@@ -49,7 +46,7 @@ public class MenuController {
             FXMLLoader loader = new FXMLLoader(App.class.getResource("dashboard.fxml"));
             Parent dashboard = loader.load();
 
-            DashboardController dashboardController = loader.<DashboardController>getController();
+//            DashboardController dashboardController = loader.<DashboardController>getController();
 
             App.scene.setRoot(dashboard);
         } catch (IOException e) {
@@ -62,7 +59,13 @@ public class MenuController {
         try {
             System.out.println("Ingreso al paciente");
             App.scene.setRoot(App.loadFXML("paciente"));
-        } catch (Exception e) {
+//            FXMLLoader loader = new FXMLLoader(App.class.getResource("paciente.fxml"));
+//            Parent Opcionpaciente = loader.load();
+//            PacienteController pacienteController =loader.<PacienteController>getController();
+////            pacienteController.ObtenerPacientes();
+//            
+//            App.scene.setRoot(Opcionpaciente);
+        } catch (IOException e) {
             System.out.println("Error: " + e);
         }
     }
@@ -72,7 +75,7 @@ public class MenuController {
         try {
             System.out.println("Ingreso a la cita");
             App.scene.setRoot(App.loadFXML("cita"));
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Error: " + e);
         }
     }

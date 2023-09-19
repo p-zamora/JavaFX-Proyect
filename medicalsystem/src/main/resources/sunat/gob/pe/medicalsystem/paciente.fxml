@@ -18,34 +18,38 @@
                 <children>
                    <Pane layoutX="25.0" layoutY="21.0" prefHeight="194.0" prefWidth="850.0">
                       <children>
-                         <TextField layoutX="27.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
+                         <TextField fx:id="txtIdentidad" layoutX="27.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
                          <Label layoutX="27.0" layoutY="54.0" text="Doc. de Identidad" />
                          <Label layoutX="298.0" layoutY="54.0" text="Nombre" />
                          <Label layoutX="27.0" layoutY="123.0" text="Apellido Materno" />
-                         <DatePicker layoutX="298.0" layoutY="144.0" prefWidth="250.0" />
+                         <DatePicker fx:id="dpFechaNaci" layoutX="298.0" layoutY="144.0" prefWidth="250.0" />
                          <Label layoutX="298.0" layoutY="123.0" text="Fecha de Nacimiento" />
-                         <TextField layoutX="298.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
-                         <TextField layoutX="27.0" layoutY="144.0" prefHeight="31.0" prefWidth="250.0" />
+                         <TextField fx:id="txtNombre" layoutX="298.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
+                         <TextField fx:id="txtApMaterno" layoutX="27.0" layoutY="144.0" prefHeight="31.0" prefWidth="250.0" />
                          <Label layoutX="27.0" layoutY="7.0" text="Datos del Paciente">
                             <font>
                                <Font name="System Bold" size="18.0" />
                             </font>
                          </Label>
-                        <TextField layoutX="566.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
+                        <TextField fx:id="txtApPaterno" layoutX="566.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
                         <Label layoutX="566.0" layoutY="54.0" text="Apellido Paterno" />
                       </children>
                    </Pane>
-                   <Button layoutX="429.0" layoutY="227.0" mnemonicParsing="false" prefWidth="120.0" text="Nuevo" />
-                   <Button layoutX="575.0" layoutY="227.0" mnemonicParsing="false" prefWidth="120.0" text="Guardar" />
+                   <Button fx:id="btnNuevo" layoutX="429.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnNuevo_OnAction" prefWidth="120.0" text="Nuevo" />
+                   <Button fx:id="btnGuardar" layoutX="575.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnGuardar_OnAction" prefWidth="120.0" text="Guardar" />
                    <Button layoutX="713.0" layoutY="227.0" mnemonicParsing="false" prefWidth="120.0" text="Actualizar" />
                 </children>
              </AnchorPane>
              <AnchorPane layoutY="280.0" prefHeight="335.0" prefWidth="899.0">
                 <children>
-                   <TableView layoutX="25.0" layoutY="40.0" prefHeight="300.0" prefWidth="850.0">
+                   <TableView fx:id="pacienteTable" layoutX="25.0" layoutY="40.0" prefHeight="300.0" prefWidth="850.0">
                      <columns>
-                       <TableColumn prefWidth="75.0" text="C1" />
-                       <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="idColumn" prefWidth="92.0" text="Código" />
+                        <TableColumn fx:id="nroDocColum" prefWidth="80.0" text="DNI" />
+                        <TableColumn fx:id="nombreColumn" prefWidth="180.0" text="Nombre" />
+                        <TableColumn fx:id="apPaternoColumn" prefWidth="200.0" text="Apellido Paterno" />
+                        <TableColumn fx:id="apMaternoColumn" prefWidth="200.0" text="Apellido Materno" />
+                        <TableColumn fx:id="fNacimColumn" prefWidth="80.0" text="Fecha N." />
                      </columns>
                    </TableView>
                    <Label layoutX="34.0" layoutY="14.0" text="Listado de pacientes">
