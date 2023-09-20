@@ -22,7 +22,7 @@
                          <Label layoutX="27.0" layoutY="54.0" text="Doc. de Identidad" />
                          <Label layoutX="298.0" layoutY="54.0" text="Nombre" />
                          <Label layoutX="27.0" layoutY="123.0" text="Apellido Materno" />
-                         <DatePicker fx:id="dpFechaNaci" layoutX="298.0" layoutY="144.0" prefWidth="250.0" />
+                         <DatePicker fx:id="dpFechaNaci" editable="false" layoutX="298.0" layoutY="144.0" prefHeight="31.0" prefWidth="250.0" />
                          <Label layoutX="298.0" layoutY="123.0" text="Fecha de Nacimiento" />
                          <TextField fx:id="txtNombre" layoutX="298.0" layoutY="75.0" prefHeight="31.0" prefWidth="250.0" />
                          <TextField fx:id="txtApMaterno" layoutX="27.0" layoutY="144.0" prefHeight="31.0" prefWidth="250.0" />
@@ -35,14 +35,14 @@
                         <Label layoutX="566.0" layoutY="54.0" text="Apellido Paterno" />
                       </children>
                    </Pane>
-                   <Button fx:id="btnNuevo" layoutX="429.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnNuevo_OnAction" prefWidth="120.0" text="Nuevo" />
-                   <Button fx:id="btnGuardar" layoutX="575.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnGuardar_OnAction" prefWidth="120.0" text="Guardar" />
-                   <Button layoutX="713.0" layoutY="227.0" mnemonicParsing="false" prefWidth="120.0" text="Actualizar" />
+                   <Button fx:id="btnNuevo" layoutX="429.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnNuevo_OnAction" prefWidth="120.0" text="Limpiar" />
+                   <Button fx:id="btnGuardar" layoutX="575.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnGuardar_OnAction" prefWidth="120.0" text="Agregar" />
+                   <Button fx:id="btnActualizar" layoutX="713.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnActualizar_OnAction" prefWidth="120.0" text="Actualizar" />
                 </children>
              </AnchorPane>
              <AnchorPane layoutY="280.0" prefHeight="335.0" prefWidth="899.0">
                 <children>
-                   <TableView fx:id="pacienteTable" layoutX="25.0" layoutY="40.0" prefHeight="300.0" prefWidth="850.0">
+                   <TableView fx:id="pacienteTable" layoutX="25.0" layoutY="40.0" onMouseClicked="#pacienteTable_OnMouseClicked" prefHeight="300.0" prefWidth="850.0">
                      <columns>
                         <TableColumn fx:id="idColumn" prefWidth="92.0" text="Código" />
                         <TableColumn fx:id="nroDocColum" prefWidth="80.0" text="DNI" />

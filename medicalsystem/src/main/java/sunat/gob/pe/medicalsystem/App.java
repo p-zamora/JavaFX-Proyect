@@ -19,6 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
+            //almalaver@gmail.com
             scene = new Scene(loadFXML("login"));
             stage.setScene(scene);
             stage.setResizable(false);

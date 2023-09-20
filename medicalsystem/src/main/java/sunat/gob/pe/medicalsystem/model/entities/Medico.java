@@ -48,10 +48,11 @@ public class Medico {
         this.activo = new SimpleBooleanProperty(activo);
     }
 
-    public Medico(String nombre, String codigoEspecialidad,Long idMedico) {
+    public Medico(String nombre, String codigoEspecialidad,Long idMedico,String numeroDocumento) {
         this.idMedico = new SimpleObjectProperty(idMedico);
         this.nombre = new SimpleStringProperty(nombre);
         this.codigoEspecialidad = new SimpleStringProperty(codigoEspecialidad);
+        this.numeroDocumento = new SimpleStringProperty(numeroDocumento);
     }
 
     @Override

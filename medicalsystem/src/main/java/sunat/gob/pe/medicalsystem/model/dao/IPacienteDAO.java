@@ -19,9 +19,9 @@ public interface IPacienteDAO {
 
     Paciente consultarPacientePorId(Long idPaciente, boolean estado);
 
-    Paciente consultarPacientePorNombre(String NroDoc, boolean estado);
+    Paciente consultarPacientePorDNI(String NroDoc, boolean estado);
 
-    void actualizarUsuario(Paciente paciente);
+    int actualizarPaciente(Paciente paciente);
 
-    void eliminarUsuario(Long idPaciente);
+    void eliminarPaciente(Long idPaciente);
 }

@@ -95,8 +95,6 @@ public class UsuarioDaoImpl implements IUsuarioDao{
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } catch(Exception e){
-            throw e;
         } finally {
             try {
                 if (conn != null) {

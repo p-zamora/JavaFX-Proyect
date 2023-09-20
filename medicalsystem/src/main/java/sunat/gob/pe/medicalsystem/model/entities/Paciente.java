@@ -39,6 +39,11 @@ public class Paciente {
     public Paciente() {
     }
 
+    public Paciente(String nombre,Long idPaciente) {
+         this.idPaciente = new SimpleObjectProperty(idPaciente);
+        this.nombre = new SimpleStringProperty(nombre);
+    }
+    
     public Paciente(String tipoDocumento, String numeroDocumento, String nombre, String apellidoPaterno, String apellidoMaterno, String fechaNacimiento) {
         this.tipoDocumento = new SimpleStringProperty(tipoDocumento);
         this.numeroDocumento = new SimpleStringProperty(numeroDocumento);

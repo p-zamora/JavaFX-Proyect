@@ -46,11 +46,11 @@ public class MenuController {
             FXMLLoader loader = new FXMLLoader(App.class.getResource("dashboard.fxml"));
             Parent dashboard = loader.load();
 
-            DashboardController dashboardController = loader.<DashboardController>getController();
-            dashboardController.cambiarUsuario();
+//            DashboardController dashboardController = loader.<DashboardController>getController();
+
             App.scene.setRoot(dashboard);
         } catch (IOException e) {
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -66,7 +66,7 @@ public class MenuController {
 //            
 //            App.scene.setRoot(Opcionpaciente);
         } catch (IOException e) {
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -76,7 +76,7 @@ public class MenuController {
             System.out.println("Ingreso a la cita");
             App.scene.setRoot(App.loadFXML("cita"));
         } catch (IOException e) {
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -85,8 +85,8 @@ public class MenuController {
         try {
             System.out.println("Ingreso a la consulta");
             App.scene.setRoot(App.loadFXML("search"));
-        } catch (Exception e) {
-            System.out.println("Error: " + e);
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 

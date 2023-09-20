@@ -1,107 +1,93 @@
-CREATE SCHEMA `bdmedical` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci ;
-USE `bdmedical`;
 
-CREATE TABLE `cita` (
-`id` int NOT NULL AUTO_INCREMENT,
-`fecha` date NOT NULL,
-`hora` time NOT NULL,
-`asunto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`idMedico` int NOT NULL,
-`idPaciente` int NOT NULL,
-`estado` char(3) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-PRIMARY KEY (`id`) ,
-INDEX `FK_cita_medico` (`idMedico` ASC) USING BTREE,
-INDEX `FK_cita_paciente` (`idPaciente` ASC) USING BTREE
-)
+CREATE SCHEMA IF NOT EXISTS `bdmedical` ;
+USE `bdmedical` ;
+
+-- -----------------------------------------------------
+-- Table `bdmedical`.`medico`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdmedical`.`medico` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tipoDocumento` CHAR(2) CHARACTER SET 'utf8mb3' NOT NULL,
+  `numeroDocumento` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
+  `nombre` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+  `apellidoPaterno` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+  `apellidoMaterno` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+  `fechaNacimiento` DATE NULL DEFAULT NULL,
+  `codigoEspecialidad` CHAR(3) CHARACTER SET 'utf8mb3' NOT NULL,
+  `activo` BIT(1) NOT NULL DEFAULT b'1',
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 0
-AVG_ROW_LENGTH = 0
-DEFAULT CHARACTER SET = utf8mb3
-COLLATE = utf8mb3_spanish_ci
-KEY_BLOCK_SIZE = 0
-MAX_ROWS = 0
-MIN_ROWS = 0
-ROW_FORMAT = Dynamic;
-CREATE TABLE `medico` (
-`id` int NOT NULL AUTO_INCREMENT,
-`tipoDocumento` char(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`numeroDocumento` varchar(15) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`apellidoPaterno` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`apellidoMaterno` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`fechaNacimiento` date NULL DEFAULT NULL,
-`codigoEspecialidad` char(3) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`activo` bit(1) NOT NULL,
-PRIMARY KEY (`id`) ,
-UNIQUE INDEX `DNI_UNIQUE` (`numeroDocumento` ASC) USING BTREE
-)
+ROW_FORMAT = DYNAMIC;
+
+CREATE UNIQUE INDEX `DNI1_UNIQUE` USING BTREE ON `bdmedical`.`medico` (`numeroDocumento`) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `bdmedical`.`paciente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdmedical`.`paciente` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tipoDocumento` CHAR(2) CHARACTER SET 'utf8mb3' NOT NULL,
+  `numeroDocumento` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
+  `nombre` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+  `apellidoPaterno` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+  `apellidoMaterno` VARCHAR(45) COLLATE 'utf8mb3_spanish_ci' NOT NULL,
+  `fechaNacimiento` DATE NULL DEFAULT NULL,
+  `activo` BIT(1) NOT NULL DEFAULT b'1',
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 0
-AVG_ROW_LENGTH = 0
-DEFAULT CHARACTER SET = utf8mb3
-COLLATE = utf8mb3_spanish_ci
-KEY_BLOCK_SIZE = 0
-MAX_ROWS = 0
-MIN_ROWS = 0
-ROW_FORMAT = Dynamic;
-CREATE TABLE `paciente` (
-`id` int NOT NULL AUTO_INCREMENT,
-`tipoDocumento` char(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`numeroDocumento` varchar(15) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`nombre` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`apellidoPaterno` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`apellidoMaterno` varbinary(45) NOT NULL,
-`fechaNacimiento` date NULL DEFAULT NULL,
-`activo` bit(1) NOT NULL DEFAULT b'0',
-PRIMARY KEY (`id`) ,
-UNIQUE INDEX `DNI_UNIQUE` (`numeroDocumento` ASC) USING BTREE
-)
+ROW_FORMAT = DYNAMIC;
+
+CREATE UNIQUE INDEX `DNI2_UNIQUE` USING BTREE ON `bdmedical`.`paciente` (`numeroDocumento`) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `bdmedical`.`cita`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdmedical`.`cita` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `fecha` DATE NOT NULL,
+  `hora` CHAR(5) COLLATE 'utf8mb3_spanish_ci' NOT NULL,
+  `asunto` VARCHAR(255) CHARACTER SET 'utf8mb3' NOT NULL,
+  `idMedico` INT NOT NULL,
+  `idPaciente` INT NOT NULL,
+  `estado` CHAR(3) COLLATE 'utf8mb3_spanish_ci' NOT NULL,
+  `consultorio` CHAR(3) COLLATE 'utf8mb3_spanish_ci' NOT NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 0
-AVG_ROW_LENGTH = 0
-DEFAULT CHARACTER SET = utf8mb3
-COLLATE = utf8mb3_spanish_ci
-KEY_BLOCK_SIZE = 0
-MAX_ROWS = 0
-MIN_ROWS = 0
-ROW_FORMAT = Dynamic;
-CREATE TABLE `parametro` (
-`codigoTabla` varchar(6) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`codigoFila` varchar(6) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`descripcionLarga` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`descripcionCorta` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NULL DEFAULT NULL,
-`valorEntero` tinyint NULL DEFAULT NULL,
-`valorDecimal` decimal(8,2) NULL DEFAULT NULL,
-`valorCadena` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NULL DEFAULT NULL,
-`activo` bit(1) NOT NULL
-)
+ROW_FORMAT = DYNAMIC;
+
+
+-- -----------------------------------------------------
+-- Table `bdmedical`.`parametro`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdmedical`.`parametro` (
+  `codigoTabla` VARCHAR(6) CHARACTER SET 'utf8mb3' NOT NULL,
+  `codigoFila` VARCHAR(6) CHARACTER SET 'utf8mb3' NOT NULL,
+  `descripcionLarga` VARCHAR(255) CHARACTER SET 'utf8mb3' NOT NULL,
+  `descripcionCorta` VARCHAR(255) CHARACTER SET 'utf8mb3' NULL DEFAULT NULL,
+  `valorEntero` TINYINT NULL DEFAULT NULL,
+  `valorDecimal` DECIMAL(8,2) NULL DEFAULT NULL,
+  `valorCadena` VARCHAR(255) CHARACTER SET 'utf8mb3' NULL DEFAULT NULL,
+  `activo` BIT(1) NOT NULL DEFAULT b'1',
+  PRIMARY KEY (`codigoTabla`, `codigoFila`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 0
-AVG_ROW_LENGTH = 0
-DEFAULT CHARACTER SET = utf8mb3
-COLLATE = utf8mb3_spanish_ci
-KEY_BLOCK_SIZE = 0
-MAX_ROWS = 0
-MIN_ROWS = 0
-ROW_FORMAT = Dynamic;
-CREATE TABLE `usuario` (
-`id` int NOT NULL AUTO_INCREMENT,
-`idMedico` int NOT NULL,
-`nombre` varchar(15) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`clave` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-`activo` bit(1) NOT NULL,
-PRIMARY KEY (`id`) ,
-INDEX `FK_usuario_medico` (`idMedico` ASC) USING BTREE
-)
+ROW_FORMAT = DYNAMIC;
+
+
+-- -----------------------------------------------------
+-- Table `bdmedical`.`usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bdmedical`.`usuario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `idMedico` INT NOT NULL,
+  `nombre` VARCHAR(15) CHARACTER SET 'utf8mb3' NOT NULL,
+  `clave` VARCHAR(255) CHARACTER SET 'utf8mb3' NOT NULL,
+  `activo` BIT(1) NOT NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 0
-AVG_ROW_LENGTH = 0
-DEFAULT CHARACTER SET = utf8mb3
-COLLATE = utf8mb3_spanish_ci
-KEY_BLOCK_SIZE = 0
-MAX_ROWS = 0
-MIN_ROWS = 0
-ROW_FORMAT = Dynamic;
+ROW_FORMAT = DYNAMIC;
+
 
 ALTER TABLE `cita` ADD CONSTRAINT `FK_cita_medico` FOREIGN KEY (`idMedico`) REFERENCES `medico` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `cita` ADD CONSTRAINT `FK_cita_paciente` FOREIGN KEY (`idPaciente`) REFERENCES `paciente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

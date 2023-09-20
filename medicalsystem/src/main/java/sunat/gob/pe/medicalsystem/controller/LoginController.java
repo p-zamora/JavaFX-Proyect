@@ -34,16 +34,6 @@ public class LoginController {
     @FXML
     private Button btningresar;
 
-//    private void MostrarAlerta(String titulo, String mensaje,Alert.AlertType alertt) {
-//        Alert alert = new Alert(alertt);
-//        alert.setTitle(titulo);
-//
-//        // Header Text: null
-//        alert.setHeaderText(null);
-//        alert.setContentText(mensaje);
-//
-//        alert.showAndWait();
-//    }
     @FXML
     public void btnIngresar() {
         try {
@@ -80,9 +70,7 @@ public class LoginController {
             }
 
         } catch (IOException e) {
-            System.out.println("Error: " + e);            
-        } catch(Exception ex){
-            new Utilitario().MostrarAlerta("Sistema Mecical Enterprice", "Lo sentimos, estamos presentando inconvenientes. Vuelva a intentarlo mas tarde.", Alert.AlertType.ERROR);
+            System.out.println("Error: " + e);
         }
     }
 

@@ -18,7 +18,7 @@ import sunat.gob.pe.medicalsystem.model.utils.Conexion;
  *
  * @author ssamanamudr
  */
-public class MedicoDaoImpl implements IMedicoDao{
+public class MedicoDaoImpl implements IMedicoDao {
 
     @Override
     public void guardarMedico(Medico medico) {
@@ -58,13 +58,13 @@ public class MedicoDaoImpl implements IMedicoDao{
 
         PreparedStatement pstmt = null;
         try {
-            String sql = "SELECT concat(numeroDocumento,\" - \",nombre,\", \",apellidoPaterno,\" \",apellidoMaterno) nombre,codigoEspecialidad,id FROM medico where activo=" + estado;
+            String sql = "SELECT concat(numeroDocumento,\" - \",nombre,\", \",apellidoPaterno,\" \",apellidoMaterno) nombre,codigoEspecialidad,id,(select descripcionLarga from parametro where codigoFila=codigoEspecialidad and codigoTabla='000001')  FROM medico where activo=" + estado;
             pstmt = conn.prepareStatement(sql);
 
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                listaMedico.add(new Medico(rs.getString(1),rs.getString(2),rs.getLong(3)));
+                listaMedico.add(new Medico(rs.getString(1), rs.getString(2), rs.getLong(3), rs.getString(4)));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -83,5 +83,5 @@ public class MedicoDaoImpl implements IMedicoDao{
 
         return listaMedico;
     }
-    
+
 }

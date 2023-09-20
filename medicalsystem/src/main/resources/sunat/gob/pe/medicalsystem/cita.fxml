@@ -23,18 +23,20 @@
             <Label layoutX="294.0" layoutY="224.0" text="Hora" />
             <Label layoutX="30.0" layoutY="308.0" text="Asunto" />
             <Label layoutX="30.0" layoutY="75.0" text="N° Doc. del Paciente" />
-            <TextField fx:id="txt" layoutX="27.0" layoutY="104.0" prefWidth="250.0" />
-            <TextField layoutX="294.0" layoutY="104.0" prefHeight="31.0" prefWidth="511.0" />
+            <TextField fx:id="txtDNI" layoutX="27.0" layoutY="104.0" prefWidth="250.0" promptText="Enter Buscar Paciente" />
+            <TextField fx:id="txtNombreP" editable="false" layoutX="294.0" layoutY="104.0" prefWidth="511.0" />
             <ComboBox fx:id="cbMedico" layoutX="26.0" layoutY="178.0" prefHeight="31.0" prefWidth="250.0" />
             <Label layoutX="294.0" layoutY="149.0" text="Especialidad" />
             <TextField fx:id="txtEspecialidad" disable="true" layoutX="294.0" layoutY="177.0" prefHeight="31.0" prefWidth="250.0" />
-            <DatePicker layoutX="26.0" layoutY="255.0" prefWidth="250.0" />
-            <DatePicker layoutX="294.0" layoutY="256.0" prefWidth="250.0" />
-            <TextArea layoutX="26.0" layoutY="336.0" prefHeight="200.0" prefWidth="784.0" />
-            <Button layoutX="549.0" layoutY="587.0" mnemonicParsing="false" prefWidth="120.0" text="Guardar" />
-            <Button layoutX="690.0" layoutY="587.0" mnemonicParsing="false" prefWidth="120.0" text="Cancelar" />
-            <TextField fx:id="txtConsultorio" disable="true" layoutX="558.0" layoutY="177.0" prefHeight="31.0" prefWidth="250.0" />
+            <DatePicker fx:id="dpFecha" editable="false" layoutX="26.0" layoutY="255.0" prefWidth="250.0" />
+            <TextArea fx:id="txtaAsunto" layoutX="26.0" layoutY="336.0" prefHeight="200.0" prefWidth="784.0" />
+            <Button fx:id="btnGuardar" layoutX="549.0" layoutY="587.0" mnemonicParsing="false" onAction="#btnGuardar_OnAction" prefWidth="120.0" text="Guardar" />
+            <Button fx:id="btnLimpiar" layoutX="690.0" layoutY="587.0" mnemonicParsing="false" onAction="#btnLimpiar_OnAction" prefWidth="120.0" text="Limpiar" />
+            <TextField fx:id="txtConsultorio" disable="true" layoutX="560.0" layoutY="252.0" opacity="0.0" prefHeight="31.0" prefWidth="250.0" />
             <Label layoutX="558.0" layoutY="149.0" text="Consultorio" />
+            <ComboBox fx:id="cbHora" layoutX="293.0" layoutY="255.0" prefWidth="244.0" />
+            <Label fx:id="lbIdMedico" layoutX="567.0" layoutY="261.0" opacity="0.0" text="Label" />
+            <ComboBox fx:id="cbConsultorio" layoutX="566.0" layoutY="177.0" prefHeight="25.0" prefWidth="237.0" />
          </children>
       </AnchorPane>
    </children>
