@@ -4,10 +4,10 @@ Sistema de citas | Curso JavaFX
 
 + Diagrama E/R
 
-![image](https://github.com/p-zamora/JavaFX-Proyect/assets/56277246/741838fe-0d49-43ca-aade-25764a40d093)
+
+![2222](https://github.com/p-zamora/JavaFX-Proyect/assets/56277246/7a4e7ef8-3e66-467b-b346-5d559087ffae)
 
 
-  
 + Pantallas 
 ![image](https://github.com/p-zamora/JavaFX-Proyect/assets/56277246/8d807918-f895-49a9-91a9-9ce4573ba377)
 ![image](https://github.com/p-zamora/JavaFX-Proyect/assets/56277246/0bbae059-f826-4348-9de8-40e8c0237c41)
