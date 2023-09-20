@@ -80,7 +80,9 @@ public class LoginController {
             }
 
         } catch (IOException e) {
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e);            
+        } catch(Exception ex){
+            new Utilitario().MostrarAlerta("Sistema Mecical Enterprice", "Lo sentimos, estamos presentando inconvenientes. Vuelva a intentarlo mas tarde.", Alert.AlertType.ERROR);
         }
     }
 

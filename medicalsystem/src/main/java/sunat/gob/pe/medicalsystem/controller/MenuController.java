@@ -46,8 +46,8 @@ public class MenuController {
             FXMLLoader loader = new FXMLLoader(App.class.getResource("dashboard.fxml"));
             Parent dashboard = loader.load();
 
-//            DashboardController dashboardController = loader.<DashboardController>getController();
-
+            DashboardController dashboardController = loader.<DashboardController>getController();
+            dashboardController.cambiarUsuario();
             App.scene.setRoot(dashboard);
         } catch (IOException e) {
             System.out.println("Error: " + e);
