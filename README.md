@@ -1,16 +1,20 @@
 # JavaFX-Proyect
 Sistema de citas | Curso JavaFX
 
-+ PASOS
-	1. Clonar el repositorio
-	2. Ejecutar el archivo bdMedical.sql para crear la base de datos
-	3. Ejecutar el archivo data.sql para cargar la data inicial
-	4. Abrir/importar el proyecto en Netbeans 
-	5. Editar el archivo de conexión: medicalsystem/src/main/java/sunat/gob/pe/medicalsystem/model/utils/Conexion.java 
-		y colocar tus datos de conexión local
-	6. Ejecutar el proyecto
-	7. Loguearse
++ Integrantes:
 
+	- Berrospi Ramirez Hector Raul
+
+	- Evangelista Carpio Yuri Angel
+
+	- Samanamud Ramirez Sergio
+
+	- Silva Falcon Victor Orlando
+
+	- Zamora León Pablo
+
++ PASOS
+	Seguir los pasos indicados en el archivo de la carpeta documentación.
 
 + Diagrama E/R
 

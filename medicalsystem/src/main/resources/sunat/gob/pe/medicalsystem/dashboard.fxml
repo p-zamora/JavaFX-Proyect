@@ -30,7 +30,7 @@
                                   <Font name="System Bold" size="18.0" />
                               </font>
                           </Label>
-                  <TextArea editable="false" layoutX="56.0" layoutY="277.0" prefHeight="168.0" prefWidth="352.0" style="-fx-background-color: #fff; -fx-border-style: none;" text="Este es un sistema de Citas Médicas, realizado por:&#10;+ Berrospi Ramirez Hector Raul&#10;+ Elguera Chipana Everth&#10;+ Evangelista Carpio Yuri Angel&#10;+ Samanamud Ramirez Sergio &#10;+ Silva Falcon Victor Orlando&#10;+ Zamora León Pablo" />
+                  <TextArea editable="false" layoutX="56.0" layoutY="277.0" prefHeight="168.0" prefWidth="352.0" style="-fx-background-color: #fff; -fx-border-style: none;" text="Este es un sistema de Citas Médicas, realizado por:&#10;+ Berrospi Ramirez Hector Raul&#10;+ Evangelista Carpio Yuri Angel&#10;+ Samanamud Ramirez Sergio &#10;+ Silva Falcon Victor Orlando&#10;+ Zamora León Pablo" />
                     </children>
                 </AnchorPane>
             </center>
